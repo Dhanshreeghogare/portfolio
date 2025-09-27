@@ -3,49 +3,114 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio</title>
+  <title>Dhanshree Ghogare - Portfolio</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: Arial, sans-serif; line-height: 1.6; }
+    body { 
+      font-family: 'Times New Roman', serif; 
+      margin: 0; 
+      padding: 0; 
+      background: #ffffff; 
+      color: #000000; 
+    }
 
-    header { background: #222; color: #fff; padding: 1rem; }
-    nav { display: flex; justify-content: space-between; align-items: center; }
-    nav h1 { font-size: 1.5rem; }
-    nav ul { list-style: none; display: flex; gap: 1rem; }
-    nav a { color: #fff; text-decoration: none; font-weight: bold; }
-    nav a:hover { color: #f39c12; }
+    header { 
+      background: #000000; 
+      color: #ffffff; 
+      padding: 1rem 2rem; 
+    }
+    .header-container { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+    }
+    header h1 { 
+      margin: 0; 
+      font-size: 1.8rem; 
+    }
+    nav ul { 
+      list-style: none; 
+      display: flex; 
+      gap: 1.5rem; 
+      margin: 0; 
+      padding: 0; 
+    }
+    nav a { 
+      color: #ffffff; 
+      text-decoration: none; 
+      font-weight: bold; 
+    }
+    nav a:hover { 
+      color: #d3c0a1; 
+    }
 
-    #hero { background: #f4f4f4; text-align: center; padding: 3rem 1rem; }
-    #hero h2 { font-size: 2rem; margin-bottom: 0.5rem; }
-    #hero p { color: #555; }
+    section { 
+      padding: 2rem; 
+      max-width: 800px; 
+      margin: auto; 
+    }
+    h2 { 
+      margin-bottom: 1rem; 
+      color: #000000; 
+    }
 
-    #about { padding: 2rem; text-align: center; }
-    #about h2 { margin-bottom: 1rem; }
+    #hero { 
+      text-align: center; 
+      padding: 3rem 1rem; 
+      background: #fdf8f2;  
+      border-radius: 12px; 
+    }
+    #hero h2 { 
+      font-size: 2rem; 
+      margin-bottom: 0.5rem; 
+    }
+    #hero p { 
+      font-style: italic; 
+    }
 
-    #projects { background: #fafafa; padding: 2rem; }
-    #projects h2 { text-align: center; margin-bottom: 1.5rem; }
-    .project { background: #fff; padding: 1rem; margin: 1rem auto; max-width: 500px; border: 1px solid #ddd; border-radius: 8px; }
-    .project h3 { margin-bottom: 0.5rem; }
-    .project a { display: inline-block; margin-top: 0.5rem; color: #f39c12; text-decoration: none; }
-    .project a:hover { text-decoration: underline; }
+    .project, .certificate { 
+      background: #ffffff; 
+      padding: 1rem; 
+      margin: 1rem 0; 
+      border-left: 4px solid #d3c0a1; 
+      border-radius: 4px; 
+      transition: 0.2s;
+    }
+    .project:hover, .certificate:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 2px 8px rgba(14, 11, 11, 0.1);
+    }
+    .project h3, .certificate h3 { 
+      margin-bottom: 0.5rem; 
+      color: #161313; 
+    }
+    .project a, .certificate a { 
+      color: #d79562; 
+      text-decoration: none; 
+      font-weight: bold; 
+    }
+    .project a:hover, .certificate a:hover { 
+      text-decoration: underline; 
+    }
 
-    #contact { padding: 2rem; text-align: center; }
-    #contact p { margin: 0.3rem 0; }
-
-    footer { background: #222; color: #fff; text-align: center; padding: 1rem; margin-top: 2rem; }
+    #contact p { 
+      margin: 0.3rem 0; 
+    }
   </style>
 </head>
 <body>
 
   <header>
-    <nav>
+    <div class="header-container">
       <h1>Dhanshree Ghogare</h1>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#certificates">Certificates</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <section id="hero">
@@ -63,28 +128,50 @@
     <div class="project">
       <h3>Portfolio Website</h3>
       <p>A personal website to showcase my skills and projects.</p>
-      <a href="https://github.com/yourusername/portfolio" target="_blank">View Code</a>
+      <a href="https://github.com/Dhanshreeghogare/portfolio" target="_blank">View Code</a>
     </div>
-    <div class="project">
-      <h3>Landing Page</h3>
-      <p>A responsive landing page built with HTML & CSS Grid.</p>
+  </section>
+
+  <section id="certificates">
+    <h2>Certificates</h2>
+    <div class="certificate">
+      <h3>Responsive Web Design</h3>
+      <p>FreeCodeCamp (2025)</p>
+      <a href="https://www.freecodecamp.org/certification/dhanshreeghogare/responsive-web-design" target="_blank">View Certificate</a>
     </div>
-    <div class="project">
-      <h3>Survey Form</h3>
-      <p>An accessible and mobile-friendly form built with HTML & CSS.</p>
+    <div class="certificate">
+      <h3>MS-CIT</h3>
+      <p>Maharashtra State Certificate in Information Technology</p>
+      <a href="mscit.jpeg" target="_blank">View Certificate</a>
+    </div>
+    <div class="certificate">
+      <h3>Data Entry</h3>
+      <p>Speed: 30 WPM</p>
+      <a href="dataentry.jpeg" target="_blank">View Certificate</a>
+    </div>
+    <div class="certificate">
+      <h3>English Typing - 30 WPM</h3>
+      <p>Speed: 30 WPM</p>
+      <a href="english30.jpeg" target="_blank">View Certificate</a>
+    </div>
+    <div class="certificate">
+      <h3>English Typing - 40 WPM</h3>
+      <p>Speed: 40 WPM</p>
+      <a href="english40.jpeg" target="_blank">View Certificate</a>
+    </div>
+    <div class="certificate">
+      <h3>Marathi Typing - 30 WPM</h3>
+      <p>Speed: 30 WPM</p>
+      <a href="marathi30.jpeg" target="_blank">View Certificate</a>
     </div>
   </section>
 
   <section id="contact">
     <h2>Contact</h2>
     <p>Email: dhanshreeghogare84@gmail.com</p>
-    <p>GitHub: https://github.com/Dhanshreeghogare</p>
-    <p>LinkedIn: https://www.linkedin.com/in/dhanshree-ghogare-b28924352</p>
+    <p>GitHub: <a href="https://github.com/Dhanshreeghogare" target="_blank">github.com/Dhanshreeghogare</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/dhanshree-ghogare-b28924352" target="_blank">linkedin.com/in/dhanshree-ghogare</a></p>
   </section>
-
-  <footer>
-    <p>© 2025 Your Name</p>
-  </footer>
 
 </body>
 </html>
