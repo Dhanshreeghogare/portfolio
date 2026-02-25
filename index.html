@@ -7,15 +7,19 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
-      --primary: #6D9DC5;
-      --secondary: #7DBBC3;
-      --accent: #A7CECB;
-      --light: #F7F9FC;
-      --dark: #2D3748;
-      --text: #4A5568;
-      --text-light: #718096;
-      --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      --transition: all 0.3s ease;
+      --primary: #8B5F8C;
+      --primary-dark: #6B4E71;
+      --secondary: #D9A5B3;
+      --accent: #F3D9DC;
+      --light: #FCF7F8;
+      --dark: #2D2A32;
+      --text: #4A4453;
+      --text-light: #7C6A7C;
+      --gradient-1: linear-gradient(135deg, #8B5F8C 0%, #D9A5B3 100%);
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
+      --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.12);
+      --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
 
     * {
@@ -31,6 +35,24 @@
       line-height: 1.6;
     }
 
+    /* Modern Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--accent);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--primary);
+      border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--primary-dark);
+    }
+
     header { 
       background: rgba(255, 255, 255, 0.95);
       color: var(--dark);
@@ -38,7 +60,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: var(--shadow);
+      box-shadow: var(--shadow-sm);
       backdrop-filter: blur(10px);
     }
 
@@ -92,7 +114,7 @@
       height: 2px;
       bottom: 0;
       left: 0;
-      background-color: var(--primary);
+      background: var(--gradient-1);
       transition: var(--transition);
     }
 
@@ -123,7 +145,7 @@
       position: absolute;
       width: 50%;
       height: 3px;
-      background: linear-gradient(to right, var(--primary), var(--accent));
+      background: var(--gradient-1);
       bottom: -10px;
       left: 0;
       border-radius: 2px;
@@ -132,7 +154,7 @@
     #hero { 
       text-align: center; 
       padding: 8rem 1rem; 
-      background: linear-gradient(135deg, rgba(109, 157, 197, 0.1) 0%, rgba(125, 187, 195, 0.1) 100%);
+      background: linear-gradient(135deg, rgba(139, 95, 140, 0.1) 0%, rgba(217, 165, 179, 0.1) 100%);
       position: relative;
       overflow: hidden;
     }
@@ -143,7 +165,7 @@
       width: 300px;
       height: 300px;
       border-radius: 50%;
-      background: rgba(167, 206, 203, 0.15);
+      background: rgba(217, 165, 179, 0.15);
       top: -150px;
       right: -100px;
     }
@@ -154,7 +176,7 @@
       width: 200px;
       height: 200px;
       border-radius: 50%;
-      background: rgba(109, 157, 197, 0.1);
+      background: rgba(139, 95, 140, 0.1);
       bottom: -100px;
       left: -80px;
     }
@@ -177,40 +199,21 @@
 
     .btn {
       display: inline-block;
-      background: linear-gradient(to right, var(--primary), var(--secondary));
+      background: var(--gradient-1);
       color: white;
       padding: 0.9rem 2rem;
       border-radius: 50px;
       text-decoration: none;
       font-weight: 600;
       transition: var(--transition);
-      box-shadow: var(--shadow);
+      box-shadow: var(--shadow-md);
       border: none;
       cursor: pointer;
-      position: relative;
-      overflow: hidden;
-      z-index: 1;
-    }
-
-    .btn:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 0%;
-      height: 100%;
-      background: linear-gradient(to right, var(--secondary), var(--accent));
-      transition: var(--transition);
-      z-index: -1;
-    }
-
-    .btn:hover:before {
-      width: 100%;
     }
 
     .btn:hover {
       transform: translateY(-3px);
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      box-shadow: var(--shadow-lg);
     }
 
     .btn-outline {
@@ -220,7 +223,9 @@
     }
 
     .btn-outline:hover {
+      background: var(--gradient-1);
       color: white;
+      border-color: transparent;
     }
 
     .about-content {
@@ -233,7 +238,7 @@
     .profile-img {
       width: 100%;
       border-radius: 20px;
-      box-shadow: var(--shadow);
+      box-shadow: var(--shadow-md);
       transition: var(--transition);
     }
 
@@ -255,8 +260,8 @@
     }
 
     .skill-tag {
-      background: rgba(109, 157, 197, 0.1);
-      color: var(--primary);
+      background: var(--accent);
+      color: var(--primary-dark);
       padding: 0.5rem 1.2rem;
       border-radius: 50px;
       font-size: 0.9rem;
@@ -265,7 +270,8 @@
     }
 
     .skill-tag:hover {
-      background: rgba(109, 157, 197, 0.2);
+      background: var(--primary);
+      color: white;
       transform: translateY(-2px);
     }
 
@@ -280,25 +286,15 @@
       padding: 2rem; 
       border-radius: 16px; 
       transition: var(--transition);
-      box-shadow: var(--shadow);
-      border-top: 4px solid var(--primary);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid rgba(139, 95, 140, 0.1);
       position: relative;
       overflow: hidden;
     }
 
-    .project:before, .certificate:before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: linear-gradient(to right, var(--primary), var(--accent));
-    }
-
     .project:hover, .certificate:hover {
       transform: translateY(-8px);
-      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.08);
+      box-shadow: var(--shadow-lg);
     }
 
     .project h3, .certificate h3 { 
@@ -323,7 +319,7 @@
     }
 
     .project a:hover, .certificate a:hover { 
-      color: var(--secondary);
+      color: var(--primary-dark);
       gap: 12px;
     }
 
@@ -364,7 +360,7 @@
     .contact-icon {
       width: 60px;
       height: 60px;
-      background: rgba(109, 157, 197, 0.1);
+      background: var(--accent);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -375,7 +371,8 @@
     }
 
     .contact-item:hover .contact-icon {
-      background: rgba(109, 157, 197, 0.2);
+      background: var(--gradient-1);
+      color: white;
       transform: scale(1.05);
     }
 
@@ -404,7 +401,7 @@
       width: 45px;
       height: 45px;
       border-radius: 50%;
-      background: var(--primary);
+      background: var(--gradient-1);
       color: white;
       display: flex;
       align-items: center;
@@ -414,8 +411,8 @@
     }
 
     .social-link:hover {
-      background: var(--secondary);
       transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
     }
 
     footer {
@@ -440,6 +437,8 @@
 
       nav ul {
         gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
       }
 
       #hero h2 {
@@ -456,6 +455,10 @@
 
       .projects-grid, .certificates-grid {
         grid-template-columns: 1fr;
+      }
+
+      h2 {
+        font-size: 2rem;
       }
     }
   </style>
@@ -504,6 +507,9 @@
           <span class="skill-tag">CSS</span>
           <span class="skill-tag">JavaScript</span>
           <span class="skill-tag">Responsive Design</span>
+          <span class="skill-tag">Computer Networks</span>
+          <span class="skill-tag">German Language</span>
+          <span class="skill-tag">Soft Skills</span>
         </div>
       </div>
     </div>
@@ -525,6 +531,35 @@
   <section id="certificates">
     <h2>Certificates</h2>
     <div class="certificates-grid">
+      <!-- New Certificates Added Here -->
+      <div class="certificate">
+        <div class="cert-info">
+          <h3>Computer Networks and Internet Protocol</h3>
+          <p>NPTEL Online Certification</p>
+        </div>
+        <a href="computer_networks_and_internet_protocol.png" target="_blank">
+          View Certificate <i class="fas fa-external-link-alt"></i>
+        </a>
+      </div>
+      <div class="certificate">
+        <div class="cert-info">
+          <h3>German Language - Level 1</h3>
+          <p>Basic German Language Certification</p>
+        </div>
+        <a href="german1.png" target="_blank">
+          View Certificate <i class="fas fa-external-link-alt"></i>
+        </a>
+      </div>
+      <div class="certificate">
+        <div class="cert-info">
+          <h3>Soft Skills Development</h3>
+          <p>Professional Soft Skills Training</p>
+        </div>
+        <a href="soft skills.png" target="_blank">
+          View Certificate <i class="fas fa-external-link-alt"></i>
+        </a>
+      </div>
+      <!-- Original Certificates -->
       <div class="certificate">
         <div class="cert-info">
           <h3>Responsive Web Design</h3>
